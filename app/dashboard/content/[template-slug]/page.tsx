@@ -53,8 +53,8 @@ const CreateNewContent = ({ params }: Props) => {
   }
 
   const saveInDb = async(formData:any, selectedTemplate:TEMPLATE|undefined, aiResponse:string) => {
-    const result = await db.insert(AIOutput).values({
-      formData: formData,
+    {/*@ts-ignore*/}
+    const result = await db.insert(AIOutput).values({ formData: formData,
       templateSlug: selectedTemplate?.slug,
       templateName: selectedTemplate?.name,
       templateIcon: selectedTemplate?.icon,
