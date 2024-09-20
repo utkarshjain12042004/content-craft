@@ -28,7 +28,7 @@ function History() {
         const data: HISTORY[] = await db
           .select()
           .from(AIOutput)
-          .where(eq(AIOutput.createdBy, user.primaryEmailAddress?.emailAddress));
+          .where(eq(AIOutput.createdBy, user.primaryEmailAddress?.emailAddress || ''));
         setHistoryData(data);
       }
     }
